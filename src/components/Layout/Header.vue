@@ -2,13 +2,11 @@
   <header>
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo right">Lucas LEMOINE et Mickael DONOSO</a>
+        <a href="#!" v-if="jwt" class="brand-logo right">Vous êtes connecté</a>
+        <a href="#!" v-else class="brand-logo right">Vous n'êtes pas connecté</a>
         <ul class="left">
-          <li>
-            <router-link to="/SecondPage">Hi</router-link>
-          </li>
           <li class="active">
-            <router-link to="/Login">Login</router-link>
+            <router-link to="/Login" v-if="!jwt">Login</router-link>
           </li>
           <li class="active">
             <router-link to="/Register">Register</router-link>
